@@ -18,7 +18,10 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
     
-    return render_template('index.html',prediction_text = 'Does this Customer churn? \n {}'.format(prediction))
+    if prediction == [0]:
+        return render_template('index.html',prediction_text = 'The Customer should not churn')
+    elif prediction == [1]:       
+        return render_template('index.html',prediction_text = 'The Customer should churn')  
     
 if __name__ == "__main__":
     app.run(debug=True)

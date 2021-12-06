@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
 <head>
   <meta charset="UTF-8">
   <title>Churn API</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   
 </head>
 
@@ -15,11 +15,14 @@
  <div class="login">
 	<h1>Churn Analysis</h1>
 
-     <!-- Main Input For Receiving Query to our ML -->
+     <!-- Main Input For Receiving Query to model -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="Senior Citizen" placeholder="Senior Citizen(give 0 for No, 1 for Yes)" required="required" />
+    	<input type="text" name="Senior Citizen" placeholder="SeniorCitizen(Enter 1-Yes/0-No)" required="required" />
         <input type="text" name="Tenure" placeholder="Tenure" required="required" />
-		<input type="text" name="Monthly Charges" placeholder="Monthly Charges" required="required" />
+	<input type="text" name="Contract_Month-to-month" placeholder="MonthlyContract(Enter 1-Yes/0-No)" required="required" />
+	<input type="text" name="Contract_Two year" placeholder="TwoYearContract(Enter 1-Yes/0-No)" required="required" />
+	<input type="text" name="Monthly Charges" placeholder="Monthly Charges" required="required" />
+	<input type="text" name="Internet Service_Fiber optic" placeholder="InternetFiber(Enter 1-Yes/0-No)" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
